@@ -86,10 +86,17 @@ textarea:focus {
     width: 45em;
 }
 
-.vBaseValor input, .Input_Submit input {
+#cifraIncremento {
+    display: none;
+}
+#cifraIncremento input{
     border-radius: 20px;
     width: 10rem;
     height: 1.5rem;
     margin: 2rem;
     box-shadow: 0 1px 0 1px;
+}
+
+#Input_Submit {
+    display: none;
 }

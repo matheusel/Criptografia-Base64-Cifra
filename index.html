@@ -27,35 +27,35 @@
         <h1>Proteja seus Textos</h1>
         <form name="formCrypt">
             <div class="formInput">
-                <label>Criptografar/Descriptografar</label><br>
-                <textarea type="text" placeholder="Digite seu texto: "></textarea>
+                <label>Digite seu Texto</label><br>
+                <textarea type="text" placeholder="Digite seu texto: " id="textareaEscreva"></textarea>
             </div>
-            <div class="Select_Algoritimo">
-                <select>
+            <div class="Opções">
+                <select id="SelecionarAlgoritimo">
                     <option value="">Escolher a Criptografia</option>
                     <option value="vBase">Base 64</option>
                     <option value="vCifra">Cifra de César</option>
                 </select>
 
-                <div class="vBaseValor">
+                <div id="cifraIncremento">
                     <input type="number" placeholder="Selecione um valor: " min="0" max="26">
                 </div>
 
-                <div>
-                    <input type="radio" value="Criptografar" id="Criptografar">
+                <div id="SelectEscolher">
+                    <input type="radio" name="Escolher" value="Criptografar" id="Criptografar">
                     <label for="Criptografar">Criptografar</label>
-                    <input type="radio" value="Descriptografar" id="Descriptografar">
+                    <input type="radio" name="Escolher" value="Descriptografar" id="Descriptografar">
                     <label for="Descriptografar">Descriptografar</label>
                 </div>
 
             </div>
 
-            <div class="Input_Submit">
-                <input type="submit" value="">
+            <div>
+                <button id="Input_Submit" onclick="descodificarBase64()">Enviar</button>
             </div>
 
             <div>
-                <textarea placeholder="Copie seu texto: "></textarea>
+                <textarea placeholder="Copie seu texto: " id="textareaCopie"></textarea>
             </div>
         
         </form>
