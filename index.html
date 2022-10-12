@@ -5,8 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criptografia On-line</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <header>
+
+        <div class="containerHeader">
+
+            <nav>
+                <ul>
+                    <a href="#"><li>HOME</li></a>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <h1>Proteja seus Textos</h1>
+        <form name="formCrypt">
+            <div class="formInput">
+                <label>Criptografar/Descriptografar</label><br>
+                <textarea type="text" placeholder="Digite seu texto: "></textarea>
+            </div>
+            <div class="Select_Algoritimo">
+                <select>
+                    <option value="">Escolher a Criptografia</option>
+                    <option value="vBase">Base 64</option>
+                    <option value="vCifra">Cifra de César</option>
+                </select>
+
+                <div class="vBaseValor">
+                    <input type="number" placeholder="Selecione um valor: " min="0" max="26">
+                </div>
+
+                <div>
+                    <input type="radio" value="Criptografar" id="Criptografar">
+                    <label for="Criptografar">Criptografar</label>
+                    <input type="radio" value="Descriptografar" id="Descriptografar">
+                    <label for="Descriptografar">Descriptografar</label>
+                </div>
+
+            </div>
+
+            <div class="Input_Submit">
+                <input type="submit" value="">
+            </div>
+
+            <div>
+                <textarea placeholder="Copie seu texto: "></textarea>
+            </div>
+        
+        </form>
+        
+    </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>

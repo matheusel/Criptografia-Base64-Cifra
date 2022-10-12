@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    user-select: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+body {
+    font-family: "Poppins";
+    font-size: 1.9rem;
+    height: 100%;
+    background-color: #D9D9D9;
+}
+
+header {
+    background-color: #0D0D0D;
+    height: 60px;
+}
+
+.containerHeader {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+}
+
+header nav ul li, nav ul a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
+
+main {
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+main h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 1.5em;
+}
+
+main form {
+    display: block;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+    background-color: #737373;
+    border-radius: 200px;
+    padding: 2rem;
+    margin: 3em;
+    transition: 0.5s;
+}
+
+main form:hover {
+    background-color: #A6A6A6;
+}
+
+textarea {
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 5px;
+    transition: 0.5s;
+    width: 20em;
+    box-shadow: 0 1px 0 1px;
+    resize: none;
+    overflow-y: hidden;
+}
+
+textarea:focus {
+    box-shadow: 0 3px 0 3px;
+    width: 45em;
+}
+
+.vBaseValor input, .Input_Submit input {
+    border-radius: 20px;
+    width: 10rem;
+    height: 1.5rem;
+    margin: 2rem;
+    box-shadow: 0 1px 0 1px;
+}
