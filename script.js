@@ -32,7 +32,6 @@ function codificarBase64() {
     let vTextOutput = document.getElementById("textareaCopie");
     
     vTextOutput.innerText = vTextInput
-    console.log(vTextOutput)
 }
 
 // Script para descodificar base 64
@@ -42,7 +41,6 @@ function descodificarBase64(){
     let vTextOutput = document.getElementById("textareaCopie");
     
     vTextOutput.innerText = vTextInput
-    console.log(vTextOutput)
 }
 
 
@@ -53,6 +51,8 @@ function btnEnviar () {
     let escolherAlgoritimo = document.getElementById("SelecionarAlgoritimo");
     const inputCriptografar = document.getElementById("Criptografar");
     const inputDescriptografar = document.getElementById("Descriptografar");
+
+    event.preventDefault()
 
     if (inputCriptografar.checked && escolherAlgoritimo.value == "vBase"){
         codificarBase64();
