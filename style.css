@@ -100,3 +100,18 @@ textarea:focus {
 #Input_Submit {
     display: none;
 }
+
+.RedesSociais, .RedesSociais img {
+    display: inline;
+    border-radius: 10px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    margin: 20px;
+}
+
+.RedesSociais img:hover {
+    width: 55px;
+    filter: invert(1);
+}

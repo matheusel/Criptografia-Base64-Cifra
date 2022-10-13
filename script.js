@@ -1,8 +1,8 @@
-// Script do butão de enviar / Quando selecionar o tipo de criptografia o nome do botão muda
+// Script do select option / Quando selecionar o tipo de criptografia o nome do botão muda
 const btnSubmit = document.getElementById("Input_Submit");
 const inputCriptografar = document.getElementById("Criptografar");
 const inputDescriptografar = document.getElementById("Descriptografar");
-let escolher = document.getElementById("SelecionarAlgoritimo");
+let escolherAlgoritimo = document.getElementById("SelecionarAlgoritimo");
 let cifraIncrementar = document.getElementById("cifraIncremento");
 
 inputCriptografar.addEventListener('click', function (){
@@ -16,11 +16,11 @@ inputDescriptografar.addEventListener('click', function (){
 })
 
 // Script do incremento / Quando selecionar Cifra de César o contador aparece no display
-escolher.addEventListener('change', function (){
+escolherAlgoritimo.addEventListener('change', function (){
 
-    if (escolher.value == 'vCifra') {
+    if (escolherAlgoritimo.value == 'vCifra') {
         cifraIncrementar.style.display = 'block';
-    } else if (escolher.value == 'vBase') {
+    } else if (escolherAlgoritimo.value == 'vBase') {
         cifraIncrementar.style.display = 'none';
     }
 })
@@ -43,4 +43,27 @@ function descodificarBase64(){
     
     vTextOutput.innerText = vTextInput
     console.log(vTextOutput)
+}
+
+
+// Script do butão de enviar
+
+function btnEnviar () {
+    let btnSubmit = document.getElementById("Input_Submit");
+    let escolherAlgoritimo = document.getElementById("SelecionarAlgoritimo");
+    const inputCriptografar = document.getElementById("Criptografar");
+    const inputDescriptografar = document.getElementById("Descriptografar");
+
+    if (inputCriptografar.checked && escolherAlgoritimo.value == "vBase"){
+        codificarBase64();
+    } else if (inputCriptografar.checked && escolherAlgoritimo.value == "vCifra") {
+        codificarCifra();
+    } else if (inputDescriptografar.checked && escolherAlgoritimo.value == "vBase") {
+        descodificarBase64();
+    } else if (inputDescriptografar.checked && escolherAlgoritimo.value == "vCifra") {
+        descodificarCifra();
+    } else {
+        alert ("Escolha uma das opções para Criptografar")
+        
+    }
 }
