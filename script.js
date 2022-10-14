@@ -4,8 +4,7 @@ const inputCriptografar = document.getElementById("Criptografar");
 const inputDescriptografar = document.getElementById("Descriptografar");
 let escolherAlgoritimo = document.getElementById("SelecionarAlgoritimo");
 let cifraIncrementar = document.getElementById("Incremento");
-let alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-
+let alfabeto = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
 inputCriptografar.addEventListener('click', function (){
     btnSubmit.style.display = 'inline';
     btnSubmit.innerText = "Criptografar";
@@ -76,15 +75,15 @@ function descodificarCifra(){
     let vTextOutput = document.getElementById("textareaCopie");
     let transformMinusculo = vTextArea.toLowerCase();
     let transformNumero = (Number(cifraIncrementar) % 26);
-    let vTextOutputCodificado = "";
+    let vTextOutputCodificado = '';
 
     for (let i = 0; i < transformMinusculo.length; i++){
         for (let x = alfabeto.length -1; x >= 0; x--){
             if (transformMinusculo[i] == alfabeto [x]){
                 vTextOutputCodificado += alfabeto [x - transformNumero]
                 break;
-            } else if (transformMinusculo[i] == " ") {
-                vTextOutputCodificado += " ";
+            } else if (transformMinusculo[i] == ' ') {
+                vTextOutputCodificado += ' ';
                 break;
             }
         }
