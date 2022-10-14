@@ -3,7 +3,8 @@ const btnSubmit = document.getElementById("Input_Submit");
 const inputCriptografar = document.getElementById("Criptografar");
 const inputDescriptografar = document.getElementById("Descriptografar");
 let escolherAlgoritimo = document.getElementById("SelecionarAlgoritimo");
-let cifraIncrementar = document.getElementById("cifraIncremento");
+let cifraIncrementar = document.getElementById("Incremento");
+let alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 inputCriptografar.addEventListener('click', function (){
     btnSubmit.style.display = 'inline';
@@ -25,7 +26,7 @@ escolherAlgoritimo.addEventListener('change', function (){
     }
 })
 
-// Script para codificar base 64
+// Script para codificar Base 64
 function codificarBase64() {
     let vTextArea = document.getElementById("textareaEscreva").value;
     let vTextInput = btoa(vTextArea);
@@ -34,13 +35,61 @@ function codificarBase64() {
     vTextOutput.innerText = vTextInput
 }
 
-// Script para descodificar base 64
+// Script para descodificar Base 64
 function descodificarBase64(){
     let vTextArea = document.getElementById("textareaEscreva").value;
     let vTextInput = atob(vTextArea);
     let vTextOutput = document.getElementById("textareaCopie");
     
     vTextOutput.innerText = vTextInput
+}
+
+// Script para codificar Cifra de César
+
+function codificarCifra(){
+    let cifraIncrementar = document.getElementById("cifraIncremento").value;
+    let vTextArea = document.getElementById("textareaEscreva").value;
+    let vTextOutput = document.getElementById("textareaCopie");
+    let transformMinusculo = vTextArea.toLowerCase();
+    let transformNumero = (Number(cifraIncrementar) % 26);
+    let vTextOutputCodificado = "";
+
+    for (let i = 0; i < transformMinusculo.length; i++){
+        for (let x = 0; alfabeto.length; x++){
+            if (transformMinusculo[i] == alfabeto [x]){
+                vTextOutputCodificado += alfabeto [x + transformNumero]
+                break;
+            } else if (transformMinusculo[i] == " ") {
+                vTextOutputCodificado += " ";
+                break;
+            }
+        }
+    }
+    vTextOutput.innerText = vTextOutputCodificado
+}
+
+// Script para descodificar Cifra de César
+
+function descodificarCifra(){
+    let cifraIncrementar = document.getElementById("cifraIncremento").value;
+    let vTextArea = document.getElementById("textareaEscreva").value;
+    let vTextOutput = document.getElementById("textareaCopie");
+    let transformMinusculo = vTextArea.toLowerCase();
+    let transformNumero = (Number(cifraIncrementar) % 26);
+    let vTextOutputCodificado = "";
+
+    for (let i = 0; i < transformMinusculo.length; i++){
+        for (let x = alfabeto.length -1; x >= 0; x--){
+            if (transformMinusculo[i] == alfabeto [x]){
+                vTextOutputCodificado += alfabeto [x - transformNumero]
+                break;
+            } else if (transformMinusculo[i] == " ") {
+                vTextOutputCodificado += " ";
+                break;
+            }
+        }
+    }
+    vTextOutput.innerText = vTextOutputCodificado    
 }
 
 

@@ -86,10 +86,10 @@ textarea:focus {
     width: 45em;
 }
 
-#cifraIncremento {
+#Incremento {
     display: none;
 }
-#cifraIncremento input{
+#Incremento input{
     border-radius: 20px;
     width: 10rem;
     height: 1.5rem;
@@ -114,4 +114,43 @@ textarea:focus {
 .RedesSociais img:hover {
     width: 55px;
     filter: invert(1);
+}
+
+@media (max-width:550px) {
+
+    main label {
+        display: none;
+        flex-wrap: wrap;
+    }
+    main form textarea {
+        width: 7em;
+    }
+
+    main form textarea:focus {
+        width: 9em;
+    }
+
+    #SelecionarAlgoritimo {
+        width: 50px;
+    }
+
+}
+
+@media (max-width:360px) {
+
+    main label {
+        display: none;
+        flex-wrap: wrap;
+    }
+    main form textarea {
+        width: 5em;
+    }
+
+    main form textarea:focus {
+        width: 7em;
+    }
+
+    #SelecionarAlgoritimo {
+        width: 50px;
+    }
 }
